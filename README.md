@@ -6,65 +6,94 @@
 ## **Overview**
 This Tableau dashboard analyzes the profitability and performance trends of a superstore across various dimensions, providing actionable insights for strategic decision-making. The key focus areas include:
 
-- **Top and bottom profit centers** by category, region, and product.
-- **Products at risk** due to low profitability or high return rates.
-- **Subcategories’ performance** in terms of profit versus sales.
-- **Average profit vs. return rate** for products and regions.
-- **Profit and ad spend by state** to identify advertising opportunities.
-- **Advertising ROI (ROAS)** by state to optimize future marketing strategies.
-  
----
-
-## **Key Objectives**
-1. **Identify profit opportunities**:
-   - Highlight categories and regions with the highest and lowest profitability.
-2. **Evaluate return rate impact**:
-   - Identify products and categories with high return rates to mitigate financial losses.
-3. **Assess advertising feasibility**:
-   - Identify states and months offering the best return on ad spend (ROAS).
+### **1. Top/Bottom 2 Profit Centers of Subcategory + Region**
+- **Description**:
+  - A **bar chart** displays the **top 2 most profitable** and **bottom 2 least profitable** subcategory and region combinations.
+  - Example:
+    - **Copiers | West**: High profit.
+    - **Tables | East**: Significant losses.
+- **Purpose**:
+  - To identify regions and subcategories for scaling or optimization.
 
 ---
-
-## **Dashboard Features**
-
-### **1. Top/Bottom Profit Centers**
-- **Bar Charts**:
-  - Display the top 2 and bottom 2 profit centers for combinations such as:
-    - **Shipping Mode + Product ID**
-    - **Subcategory + Region**
-  - Help identify areas of high and low profitability.
 
 ### **2. Subcategories: Profit vs. Sales**
-- **Scatter Plot**:
-  - Visualizes the relationship between profit and sales for each subcategory.
-  - Highlights subcategories like **Tables** with high sales but low profits for further analysis.
+- **Description**:
+  - A **scatter plot** visualizes the relationship between sales and profit for each subcategory.
+  - Example:
+    - **Copiers**: High profit with moderate sales.
+    - **Tables**: High sales but low profit.
+- **Purpose**:
+  - To identify subcategories requiring pricing adjustments or cost reduction.
 
-### **3. Products at Risk**
-- **Table Visualization**:
-  - Lists products with the lowest profitability.
-  - Includes a heatmap to highlight products with significant losses, aiding in decision-making.
+---
 
-### **4. Profit and Ad Spend by State**
-- **Map Visualization**:
-  - Shows state-level profit and advertising spend allocations.
-  - Identifies states like **California** and **New York** with high ROAS for targeted advertising.
+### **3. Which Products Are at Risk**
+- **Description**:
+  - A **table with a heatmap** lists the products with the lowest profitability.
+  - Example:
+    - **GBC DocuBind P400 Electric Binding System**: Loss of -$20,388.
+  - Color coding highlights products with significant losses.
+- **Purpose**:
+  - To recommend discontinuing or revising unprofitable products.
 
-### **5. Advertising ROI (ROAS)**
-- **Map Visualization**:
-  - Displays ROI metrics for each state to optimize marketing efforts.
-  - Prioritizes high ROAS states for advertising investments.
+---
 
-### **6. Average Profit vs. Return Rate**
-- **Bubble Chart**:
-  - Plots regions, categories, or subcategories based on their average profit and return rate.
-  - Highlights areas with high return rates negatively impacting profits.
+### **4. Top 3 State-Month Combinations**
+- **Description**:
+  - A **bar chart** showcases the **top 3 state-month combinations** based on average profit (Avg. Profit).
+  - Additional metrics calculated:
+    - **Ad Spend**: Advertising expenditures calculated as 20% of average profit.
+    - **ROAS**: Return on Advertising Spend.
+  - Example:
+    - **Indiana | October**:
+      - Average Profit: $643.1.
+      - Ad Spend: $128.6.
+      - ROAS: 5.
+  - **Formulas**:
+    - Ad Spend:
+      ```plaintext
+      Ad Spend = Avg. Profit * 0.2
+      ```
+    - ROAS:
+      ```plaintext
+      ROAS = Avg. Profit / Ad Spend
+      ```
+- **Purpose**:
+  - To determine the most effective state-month combinations for advertising campaigns.
 
-### **7. Return Rate by Hierarchy**
-- **Treemap Visualization**:
-  - Organizes data hierarchically by category, product name, and customer name.
-  - Visualizes % return rate with larger, darker blocks representing higher rates.
-  - Allows drill-down analysis from categories to individual customers.
+---
 
+### **5. AVG Profit vs. Return Rate**
+- **Description**:
+  - A **bubble chart** shows the relationship between average profit and return rate across regions.
+  - Example:
+    - **Utah**: High return rate and losses.
+    - **Michigan**: Low return rate and high profit.
+  - The size and color of the bubbles represent the impact of returns.
+  - **Return Rate**:
+    - **Formula**:
+      ```sql
+      (SUM([Returned Indicator]) / COUNT([Order ID]))*100
+      ```
+    - Measures the percentage of returned products to total orders.
+- **Purpose**:
+  - To analyze regions with high return rates to minimize losses.
+
+---
+
+### **6. Return Rate by Hierarchy**
+- **Description**:
+  - A **treemap visualization** organizes return rate data hierarchically:
+    - **Category**
+    - **Product Name**
+    - **Customer Name**
+  - Drill-down functionality allows detailed analysis from categories to specific customers.
+  - Example:
+    - **Technology**: Return Rate (%): 27.331.
+    - **Furniture**: Return Rate (%): 25.601.
+- **Purpose**:
+  - To identify categories, products, and customers contributing most to returns and address the causes effectively.
 ---
 
 ## **Data Used**
@@ -78,58 +107,45 @@ This Tableau dashboard analyzes the profitability and performance trends of a su
 
 ---
 
-## **KPIs Calculated**
-
-1. **Return Rate**:
-   - Formula:
-     ```sql
-     (SUM([Returned_Binary]) / COUNT([Order ID]))*100
-     ```
-   - Measures the % of returned products to total orders.
-
-2. **Advertising Spend**:
-   - Formula:
-     ```sql
-     Profit * 0.2
-     ```
-   - Calculates the advertising budget as 20% of profit.
-
-3. **ROAS (Return on Ad Spend)**:
-   - Formula:
-     ```sql
-     Profit / Ad Spend
-     ```
-   - Evaluates the return generated per dollar spent on advertising.
-
----
-
 ## **Insights & Recommendations**
 
 ### **1. Top Profit Centers**
-- Subcategories like **Copiers** (West region) and **Phones** (Central region) are highly profitable.
-- Scaling these areas could significantly increase revenue.
+- Subcategories like **Copiers** (West region) and **Phones** (Central region) remain the most profitable.
+- Expanding operations in these areas or replicating their strategies across other regions could significantly boost overall revenue.
 
 ### **2. Products to Eliminate**
-- Products like **GBC DocuBind P400 Electric Binding System** have high losses and should be discontinued.
+- Products such as **GBC DocuBind P400 Electric Binding System** and **Cubify CubeX 3D Printer Double Head Print** show substantial losses.
+- These products should be evaluated for potential discontinuation or significant cost reductions to minimize financial impact.
 
 ### **3. Advertising Opportunities**
-- States like **California**, **New York**, and **Washington** show the highest ROAS, making them top priorities for marketing efforts.
+- The **top 3 state-month combinations** for advertising based on Return on Advertising Spend (ROAS) are:
+  - **Indiana | October**: Average Profit $643.1, Ad Spend $128.6, ROAS 5.
+  - **Vermont | November**: Average Profit $596.0, Ad Spend $119.2, ROAS 5.
+  - **Washington | March**: Average Profit $521.3, Ad Spend $104.3, ROAS 5.
+- Allocate marketing budgets to these state-month combinations to maximize returns on advertising investments.
 
 ### **4. Underperforming Subcategories**
-- Subcategories like **Tables** and **Bookcases** with high return rates and low profitability require cost optimization or pricing adjustments.
+- Subcategories like **Tables** and **Bookcases** demonstrate high sales volumes but low profitability and elevated return rates.
+- Focus on optimizing production costs, revisiting pricing strategies, or redesigning these products to improve profitability.
+
+### **5. Return Rate Trends**
+- Categories like **Technology** (Return Rate 27.331%) and **Furniture** (Return Rate 25.601%) contribute heavily to overall return rates.
+- Drill-down analysis reveals specific products and customers responsible for these returns, enabling targeted interventions to reduce return rates and enhance customer satisfaction.
 
 ---
 
-## **How to Navigate the Dashboard**
-
+### **Navigation Guide**
 1. **Top/Bottom Profit Centers**:
-   - Explore profitability by selecting different categories and regions.
+   - Identify high-performing and low-performing subcategory and region combinations.
 2. **Subcategories: Profit vs. Sales**:
-   - Hover over scatter plot points to view detailed performance metrics.
-3. **Products at Risk**:
-   - Use filters to identify and evaluate specific products.
-4. **Profit and ROAS by State**:
-   - Click on states to drill down into profitability and ROAS metrics.
-5. **Return Rate Hierarchy**:
-   - Drill down from category to product to customer to analyze return trends.
+   - Explore subcategories needing cost or pricing adjustments.
+3. **Which Products Are at Risk**:
+   - Evaluate products with the highest losses and consider necessary actions.
+4. **Top 3 State-Month Combinations**:
+   - Focus on state-month pairs with high advertising ROI.
+5. **AVG Profit vs. Return Rate**:
+   - Investigate regions with high return rates and low profits.
+6. **Return Rate by Hierarchy**:
+   - Drill down into return rates by category, product, and customer to mitigate issues.
+
 
