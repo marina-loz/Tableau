@@ -2,6 +2,11 @@
 ### **Tableau Link**
 [View the Dashboard on Tableau Public](https://public.tableau.com/views/storytelling1-1_pdf/Story2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
+To provide a clear walkthrough of the analysis and dashboard, I created a video presentation that explains the goals, methodology, and insights of the **Return Rate Analysis Project**.  
+
+You can watch the video presentation here:  
+🔗 [**Video Presentation Link**]((https://drive.google.com/file/d/1naLFYw6KmfTdTf8kxS5dZL_oXO9YbetQ/view?usp=sharing)
+
 
 ## **Overview**
 This Tableau project explores **Return Rate Analysis** to identify trends, root causes, and actionable insights for product returns. By analyzing returns across categories, time periods, and regions, the project helps in understanding the correlation between sales and returns while highlighting key problem areas.
@@ -80,10 +85,10 @@ The goals of the **Return Rate Analysis** are as follows:
       - Scatter plot illustrating how higher sales lead to higher returns for certain products.  
    4. **Return Rate by Geography**:  
       - Map visualizing return rates across U.S. states.  
-      - States like **California (11.14%)** and **Utah (12.63%)** have the highest return rates.  
+      - State like **California (11.14%)**  has the highest return rates.  
    5. **Return Seasonalities**:  
       - Line chart showing return rate trends by month.  
-      - Insight: Return rates peak in **September** and during the **holiday season** (November-December).  
+      - Insight: Return rates peak in **August** and during the **holiday season** (November-December).  
    6. **Highlight Category Filter**:  
       - Interactive filter to analyze return rates for specific categories.  
 
