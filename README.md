@@ -5,7 +5,7 @@
 To provide a clear walkthrough of the analysis and dashboard, I created a video presentation that explains the goals, methodology, and insights of the **Return Rate Analysis Project**.  
 
 You can watch the video presentation here:  
-🔗 [**Video Presentation Link**]((https://drive.google.com/file/d/1naLFYw6KmfTdTf8kxS5dZL_oXO9YbetQ/view?usp=sharing)
+🔗 [**Video Presentation Link**](https://drive.google.com/file/d/1naLFYw6KmfTdTf8kxS5dZL_oXO9YbetQ/view?usp=sharing)
 
 
 ## **Overview**
