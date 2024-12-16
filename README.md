@@ -83,7 +83,7 @@ The goals of the **Return Rate Analysis** are as follows:
 
 ---
 
-## **5. How to Use the Tableau Story**
+## **3. How to Use the Tableau Story**
 1. **Navigate Between Story Pages**:  
    - Use the tabs at the top to move between Introduction, Metrics, Root Cause Analysis, and Dashboard.  
 2. **Interactive Features**:  
@@ -95,7 +95,7 @@ The goals of the **Return Rate Analysis** are as follows:
 
 ---
 
-## **6. Files Submitted**
+## **4. Files Submitted**
 - **PDF Export of the Tableau Story**: `Return_Rate_Analysis.pdf`  
 
 ---
