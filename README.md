@@ -4,10 +4,6 @@
 
 To provide a clear walkthrough of the analysis and dashboard, I created a video presentation that explains the goals, methodology, and insights of the **Return Rate Analysis Project**.  
 
-You can watch the video presentation here:  
-🔗 [**Video Presentation Link**](https://drive.google.com/file/d/1naLFYw6KmfTdTf8kxS5dZL_oXO9YbetQ/view?usp=sharing)
-
-
 ## **Overview**
 This Tableau project explores **Return Rate Analysis** to identify trends, root causes, and actionable insights for product returns. By analyzing returns across categories, time periods, and regions, the project helps in understanding the correlation between sales and returns while highlighting key problem areas.
 
@@ -35,62 +31,33 @@ The goals of the **Return Rate Analysis** are as follows:
 ### **Page 2: Return Metrics**
 - **Title**: *"Which Metric is Better?"*  
 - **Key Metrics**:  
-   1. **Return Rate**:  
-      - **Definition**: Percentage of orders that are returned.  
-      - **Formula**:  
-        ```sql
-        (SUM([Returned Indicator]) / COUNT([Order ID]))*100
-        ```
-   2. **Total Cost of Returns**:  
-      - **Definition**: Total financial impact of returned products.  
-      - **Formula**:  
-        ```sql
-        SUM(IF [Returned Indicator] = 1 THEN [Product Cost] ELSE 0 END)
-        ```
-   3. **Total Number of Returns**:  
-      - **Definition**: Total count of returned orders.  
-      - **Formula**:  
-        ```sql
-        SUM([Returned Indicator])
-        ```
-- **Purpose**: Compares the three metrics to explain when each is useful:
-   - **Return Rate**: Best for analyzing trends across categories and regions.  
-   - **Cost of Returns**: Useful for understanding financial losses.  
-   - **Total Returns**: Ideal for operational analysis.  
 
 ---
 
 ### **Page 3: Root Cause Analysis**
 - **Title**: *"What Causes Returns?"*  
-- **Chart**: **Scatter Plot** - *Correlation Between Sales and Returns*  
-- **Insight**:  
-   - Products with higher sales often have higher returns.  
-   - Example: **Binders** and **Paper** show both high sales and high return counts.  
-   - Categories like **Appliances** and **Accessories** are exceptions, with lower returns despite moderate sales.  
-- **Purpose**: Identifies key product subcategories contributing to high returns.  
+- **Chart**: **Scatter Plot** - *Correlation Between Sales and Returns*
 
 ---
 
-### **Page 4: Return Rate Analysis Dashboard**
+### **Page 4: Root Cause Analysis/2**
+- **Title**: *"Root Causes of High Returns"*  
+- **Content**:  
+   - **Table**: Top 10 customers with the highest return rates:  
+      - Names, Return Rates, Count of Returns.  
+
+---
+
+### **Page 5: Return Rate Analysis Dashboard**
 - **Title**: *"Interactive Return Rate Analysis Dashboard"*  
-- **Components of the Dashboard**:  
-   1. **Total Profit**:  
-      - KPI displaying overall profit: **$360,129.5**.  
-   2. **Return Rate by Category**:  
-      - Bar chart showing return rates for major categories:  
-         - **Technology**: 19%  
-         - **Furniture**: 18%  
-         - **Office Supplies**: 10%  
-   3. **Correlation Between Sales and Returns**:  
-      - Scatter plot illustrating how higher sales lead to higher returns for certain products.  
-   4. **Return Rate by Geography**:  
-      - Map visualizing return rates across U.S. states.  
-      - State like **California (11.14%)**  has the highest return rates.  
-   5. **Return Seasonalities**:  
-      - Line chart showing return rate trends by month.  
-      - Insight: Return rates peak in **August** and during the **holiday season** (November-December).  
-   6. **Highlight Category Filter**:  
-      - Interactive filter to analyze return rates for specific categories.  
+- **Components**:  
+   1. **Total Profit**: $360,129.5 KPI.  
+   2. **Return Rate by Category**: Bar chart of return rates.  
+   3. **Sales vs Returns Correlation**: Scatter plot showing strong correlation.  
+   4. **Return Rate by Geography**: U.S. map showing state-level return rates.  
+   5. **Return Seasonalities**: Line chart showing spikes in **August** and **December**.  
+   6. **Category Filter**: Allows drilling down into specific product categories.  
+
 
 - **Purpose**:  
    - Allows users to explore data interactively.  
@@ -98,25 +65,21 @@ The goals of the **Return Rate Analysis** are as follows:
 
 ---
 
-## **3. Key Insights**
-1. **High Return Categories**:  
-   - Categories like **Technology** and **Furniture** have the highest return rates.  
-2. **Geographic Patterns**:  
-   - State like **California** contribute the most to returns.  
-3. **Correlation Between Sales and Returns**:  
-   - Products with high sales, such as **Binders**, also have higher return counts.  
-4. **Seasonality**:  
-   - Return rates spike during specific months, particularly **August** and **November-December** (holiday season).  
+### **Page 6: Summary – Conclusions and Recommendations**
+- **Title**: *"Key Insights and Next Steps"*  
 
----
+#### **Conclusions**:  
+1. **High-Return Categories**: Machines, Chairs.  
+2. **Problematic Regions**: Utah (56.8%), California (45.2%), Oregon (44.7%).  
+3. **Top Customers**: 10 customers with return rates > 86%.  
+4. **Seasonal Trends**: Peaks in **August** and **December**.  
 
-## **4. Recommendations**
-1. **Product Quality Improvement**:  
-   - Focus on high-return products like **Binders** and **Tables** to identify quality issues.  
-2. **Geographic Targeting**:  
-   - Implement targeted strategies to reduce returns in high-return states like **California**.  
-3. **Monitor Trends**:  
-   - Use the Tableau dashboard to regularly analyze return rates and identify problem areas.  
+#### **Recommendations**:  
+1. **Product Quality Focus**: Investigate and resolve issues in high-return categories.  
+2. **Targeted Actions**: Address returns in high-return regions (e.g., California, Utah).  
+3. **Customer Outreach**: Engage top customers with feedback surveys.  
+4. **Seasonal Prep**: Strengthen quality control before peak months.  
+
 
 ---
 
