@@ -30,7 +30,8 @@ The goals of the **Return Rate Analysis** are as follows:
 
 ### **Page 2: Return Metrics**
 - **Title**: *"Which Metric is Better?"*  
-- **Key Metrics**:  
+- **Key Metrics**: Return Rate= AVG((IF [Returned] = "Yes" THEN 1   ELSE 0  END)*100)
+ 
 
 ---
 
